@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ing. Leonardo Mejias - Desarrollador Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ing. Leonardo Mejias</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#servicios">Habilidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Ing. Leonardo Mejias</h1>
+                <h2>Desarrollador Web Full Stack</h2>
+                <p>Especialista en crear soluciones robustas, dinámicas y escalables orientadas a resultados comerciales y profesionales.</p>
+                <a href="https://wa.me/584121443070?text=Hola%20Leonardo,%20estoy%20interesado%20en%20tus%20servicios%20de%20desarrollo%20web." target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Contáctame por WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="about">
+            <div class="container">
+                <h2>Sobre Mí</h2>
+                <p>Desarrollador web profesional con sólida experiencia en el diseño, desarrollo e implementación de aplicaciones web a medida. Enfoque absoluto en rendimiento, buenas prácticas de programación y experiencias de usuario óptimas para potenciar proyectos en LinkedIn, Instagram y otras plataformas digitales.</p>
+                
+                <div class="about-gallery">
+                    <div class="gallery-item">
+                        <img src="img/img1.png" alt="Sistema Inventario">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img2.png" alt="Desarrollo Web para Servidores de Juegos">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img3.png" alt="Proyectos de Juegos en Linea">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img4.png" alt="Proyectos de Juegos en Linea">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="img/img5.png" alt="Proyectos de Juegos en Linea">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="skills">
+            <div class="container">
+                <h2>Tecnologías y Experiencia</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fab fa-php"></i>
+                        <h3>PHP</h3>
+                        <p>Desarrollo backend robusto y lógica de servidores personalizada.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>MySQL</h3>
+                        <p>Gestión eficiente de bases de datos relacionales y consultas optimizadas.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                        <p>Estructuración semántica y accesible para la web moderna.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Interactividad dinámica y experiencias de usuario fluidas.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                        <p>Diseño responsive, adaptativo y estilos modernos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2>Contacto Directo</h2>
+                <p>¿Tienes un proyecto en mente o requieres un desarrollador calificado? Comunícate de inmediato.</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/584121443070?text=Hola%20Leonardo,%20vengo%20de%20tu%20web%20y%20quiero%20contratar%20tus%20servicios." target="_blank" class="btn-whatsapp-large">
+                        <i class="fab fa-whatsapp"></i> +58 412-1443070
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="btn-instagram">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="btn-linkedin">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Lightbox con controles de navegación -->
+    <div id="lightbox" class="lightbox-modal">
+        <span id="lightbox-close" class="lightbox-btn">&times;</span>
+        <button id="lightbox-prev" class="lightbox-nav-btn"><i class="fas fa-chevron-left"></i></button>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+        <button id="lightbox-next" class="lightbox-nav-btn"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ing. Leonardo Mejias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
