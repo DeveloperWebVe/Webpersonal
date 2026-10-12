@@ -124,38 +124,67 @@ section {
     margin-bottom: 40px;
 }
 
-.about-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* Estilos para el Slider Automático de 10 segundos */
+.slider-container {
+    position: relative;
     width: 100%;
-    max-width: 900px;
-    margin-top: 20px;
-    justify-items: center;
-}
-
-.gallery-item {
-    background-color: #1e293b;
-    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto 0;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    background-color: #1e293b;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
     width: 100%;
 }
 
-.gallery-item:hover {
-    transform: translateY(-5px);
+.slider-slide {
+    min-width: 100%;
+    box-sizing: border-box;
 }
 
-.gallery-item img {
+.slider-slide img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 400px;
+    object-fit: contain;
+    background-color: #0b0f19;
     display: block;
     cursor: pointer;
 }
 
-/* Estilos para el visor Lightbox interactivo con flechas */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 23, 42, 0.7);
+    color: #38bdf8;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+.slider-prev {
+    left: 15px;
+}
+
+.slider-next {
+    right: 15px;
+}
+
+/* Visor Lightbox para pantalla completa */
 .lightbox-modal {
     display: none;
     position: fixed;
@@ -170,26 +199,22 @@ section {
 }
 
 .lightbox-modal img {
-    max-width: 80%;
-    max-height: 85%;
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
 }
 
 .lightbox-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 15px;
+    right: 20px;
     color: #f8fafc;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
     cursor: pointer;
-    transition: color 0.3s;
     z-index: 2010;
-}
-
-.lightbox-btn:hover {
-    color: #38bdf8;
 }
 
 .lightbox-nav-btn {
@@ -199,25 +224,19 @@ section {
     background-color: rgba(30, 41, 59, 0.8);
     color: #38bdf8;
     border: none;
-    font-size: 1.8rem;
-    padding: 15px 20px;
+    font-size: 1.5rem;
+    padding: 12px 16px;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
     z-index: 2010;
 }
 
-.lightbox-nav-btn:hover {
-    background-color: #38bdf8;
-    color: #0f172a;
-}
-
 #lightbox-prev {
-    left: 30px;
+    left: 10px;
 }
 
 #lightbox-next {
-    right: 30px;
+    right: 10px;
 }
 
 .skills-grid {
@@ -279,4 +298,10 @@ footer {
     padding: 20px;
     color: #64748b;
     font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .slider-slide img {
+        height: 250px;
+    }
 }
