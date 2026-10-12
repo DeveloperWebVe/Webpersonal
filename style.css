@@ -1,4 +1,4 @@
-/* style.css - Optimización estricta para móviles y ajuste de cuadrícula */
+/* style.css - Añadidos los estilos del enlace del logo y el icono proporcional */
 
 * {
     margin: 0;
@@ -38,6 +38,27 @@ header {
     padding: 12px 15px;
     flex-wrap: wrap;
     gap: 8px;
+}
+
+/* Estilos para alinear el icono y el texto dentro del enlace del logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+}
+
+.logo-icon {
+    height: 1.4rem;
+    width: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    display: block;
 }
 
 .logo {
@@ -308,6 +329,9 @@ footer {
     }
     .logo {
         font-size: 1.2rem;
+    }
+    .logo-icon {
+        height: 1.7rem;
     }
     .nav-links {
         font-size: 1rem;
