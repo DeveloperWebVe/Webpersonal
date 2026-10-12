@@ -1,20 +1,47 @@
 /* script.js */
 document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
+    // Desplazamiento suave manual (bypasea la restricción de animaciones de Windows)
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = link.getAttribute('href');
+            const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
+
             if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const navbarHeight = document.querySelector('header').offsetHeight;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const startPosition = window.pageYOffset;
+                const targetPosition = elementPosition + startPosition - navbarHeight;
+                const distance = targetPosition - startPosition;
+                const duration = 600; // Duración de la animación en milisegundos
+                let startTime = null;
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                    window.scrollTo(0, run);
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                // Función de aceleración suave (Easing)
+                function easeInOutQuad(t, b, c, d) {
+                    t /= d / 2;
+                    if (t < 1) return c / 2 * t * t + b;
+                    t--;
+                    return -c / 2 * (t * (t - 2) - 1) + b;
+                }
+
+                requestAnimationFrame(animation);
             }
         });
     });
 
-    // Lógica del Slider Automático (10 segundos) y manual
+    // Lógica del Slider Automático (5 segundos) y manual
     const sliderTrack = document.getElementById('sliderTrack');
     const slides = document.querySelectorAll('.slider-slide');
     const slidePrev = document.getElementById('slidePrev');
@@ -50,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Intervalo automático cada 10 segundos (10000 ms)
     let slideInterval = setInterval(nextSlide, 5000);
 
     function resetTimer() {
@@ -114,7 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Controles de teclado y táctiles dentro del visor ampliado
     let touchStartX = 0;
     let touchEndX = 0;
 
