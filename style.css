@@ -1,4 +1,4 @@
-/* style.css - Añadidos los estilos del enlace del logo y el icono proporcional */
+/* style.css - Corrección del tamaño del icono del logo en móviles */
 
 * {
     margin: 0;
@@ -53,9 +53,10 @@ header {
     opacity: 0.85;
 }
 
+/* Tamaño controlado estrictamente para teléfonos */
 .logo-icon {
-    height: 1.4rem;
-    width: auto;
+    height: 24px;
+    width: 24px;
     object-fit: contain;
     border-radius: 4px;
     display: block;
@@ -331,7 +332,8 @@ footer {
         font-size: 1.2rem;
     }
     .logo-icon {
-        height: 1.7rem;
+        height: 32px;
+        width: 32px;
     }
     .nav-links {
         font-size: 1rem;
