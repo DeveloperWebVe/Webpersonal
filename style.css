@@ -15,7 +15,7 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     background-color: #0f172a;
-    color: #f8fafc;
+    color: #94a3b8;
     line-height: 1.6;
 }
 
@@ -142,7 +142,7 @@ section {
 
 /* Ajustado al mismo tamaño que el párrafo de contacto */
 .about p {
-    color: #cbd5e1;
+    color: #94a3b8;
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
